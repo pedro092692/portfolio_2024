@@ -3,7 +3,9 @@ from config import Config
 from app.extensions import Bootstrap5
 from app.extensions import db
 from app.extensions import Migrate
+from app.extensions import login_manager
 from app.database import DataBase
+from app.models.user import User
 
 
 def create_app(config_class=Config):
@@ -15,6 +17,13 @@ def create_app(config_class=Config):
     app_db.create_tables()
     Migrate(app, db)
 
+    # login manager
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_used(user_id):
+        return User.get_user_id(user_id)
+
     # plugins
     bootstrap = Bootstrap5(app)
 
@@ -25,7 +34,7 @@ def create_app(config_class=Config):
     # register blueprints
     app.register_blueprint(main_bp)
     app.register_blueprint(security_bp)
-    app.register_blueprint(admin_bp)
+    app.register_blueprint(admin_bp, url_prefix='/admin')
 
     @app.route('/test')
     def test_route():
