@@ -1,4 +1,5 @@
 import os
+from app.extensions import generate_password_hash
 
 
 class DataBase:
