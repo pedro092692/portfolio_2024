@@ -1,6 +1,6 @@
 from flask import Flask
 from config import Config
-from extensions import Bootstrap5
+from app.extensions import Bootstrap5
 
 
 def create_app(config_class=Config):
