@@ -8,7 +8,10 @@ def create_app(config_class=Config):
 
     # blueprints
     from app.main import bp as main_bp
+    from app.security import bp as security_bp
+    # register blueprints
     app.register_blueprint(main_bp)
+    app.register_blueprint(security_bp)
 
     @app.route('/test')
     def test_route():
