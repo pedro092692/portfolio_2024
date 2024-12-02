@@ -1,5 +1,5 @@
 from app.extensions import db
-
+from app.models.helpers import add_item
 
 class User:
     __tablename__ = 'users'
@@ -7,6 +7,10 @@ class User:
     email = db.Column(db.String(100))
     password = db.Column(db.String(200))
     role = db.Column(db.String(20))
+
+    @staticmethod
+    def create_user(*args):
+        return add_item(User, args)
 
     @staticmethod
     def get_user_id(user_id):
