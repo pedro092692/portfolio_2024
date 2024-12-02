@@ -1,11 +1,18 @@
 from flask import Flask
 from config import Config
 from app.extensions import Bootstrap5
+from app.extensions import db
+from app.database import DataBase
 
 
 def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
+
+    # database
+    app_db = DataBase(db, app)
+    app_db.create_tables()
+
     # plugins
     bootstrap = Bootstrap5(app)
 
