@@ -4,5 +4,5 @@ from app.security import bp
 
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
-    return 'login here'
+    return render_template('security/login.html')
 
