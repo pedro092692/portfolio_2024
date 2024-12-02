@@ -4,6 +4,7 @@ from app.extensions import Bootstrap5
 from app.extensions import db
 from app.extensions import Migrate
 from app.extensions import login_manager
+from app.extensions import CSRFProtect
 from app.database import DataBase
 from app.models.user import User
 
@@ -23,6 +24,9 @@ def create_app(config_class=Config):
     @login_manager.user_loader
     def load_used(user_id):
         return User.get_user_id(user_id)
+
+    # CSFR
+    CSRFProtect(app)
 
     # plugins
     bootstrap = Bootstrap5(app)

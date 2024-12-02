@@ -1,6 +1,7 @@
 from flask_login import UserMixin, login_required, login_user, logout_user, LoginManager, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_bootstrap import Bootstrap5
+from flask_wtf.csrf import CSRFProtect
 from sqlalchemy.orm import Mapped, mapped_column
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Integer, String
