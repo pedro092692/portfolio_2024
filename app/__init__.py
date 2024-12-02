@@ -1,6 +1,6 @@
 from flask import Flask
 from config import Config
-from app.extensions import Bootstrap5
+from app.extensions import Bootstrap4
 from app.extensions import db
 from app.extensions import Migrate
 from app.extensions import login_manager
@@ -29,7 +29,7 @@ def create_app(config_class=Config):
     CSRFProtect(app)
 
     # plugins
-    bootstrap = Bootstrap5(app)
+    bootstrap = Bootstrap4(app)
 
     # blueprints
     from app.main import bp as main_bp

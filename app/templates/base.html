@@ -7,15 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!--    load bootstrap css -->
     {{ bootstrap.load_css() }}
+    <!--    render forms-->
+    {% from 'bootstrap5/form.html' import render_form %}
     <!--    custom css-->
     {% block css %}
     {% endblock css %}
     <title>{%block title%} {%endblock title%}</title>
 </head>
-<body>
+<body id="body">
     {% block content  %}
     {% endblock content %}
     <!--    load bootstrap js-->
     {{ bootstrap.load_js() }}
+
+    <!--    custom js-->
+        {% block js %}
+        {% endblock js %}
+    <!--end custom js-->
 </body>
 </html>

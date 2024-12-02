@@ -1,6 +1,9 @@
-{% extends 'base.html' %}
 
+{% extends 'base.html' %}
 <!--custom css-->
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/security/login.css') }}">
+{% endblock css %}
 <!--end custom css-->
 
 <!--title-->
@@ -11,6 +14,22 @@
 
 <!--content-->
 {% block content %}
-    <p>Content here</p>
+    <form action="" class="form-signin" autocomplete="off">
+        <img class="mb-4 rounded-circle" src="{{ url_for('static', filename='img/profile_photo.png') }}" alt=""
+             width="80" height="80">
+        <h1 class="h3 mb-3 font-weight-normal">Welcome Please sign in</h1>
+        {{ form.email.label(class='sr-only') }}
+        {{ form.email(class="form-control", placeholder="Email address") }}
+        {{ form.password.label(class='sr-only') }}
+        {{ form.password(class="form-control", placeholder="Password", autocomplete="off") }}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+
 {% endblock content %}
 <!--end content-->
+
+<!--custom js-->
+    {% block js %}
+        <script src="{{ url_for('static', filename='js/app.js') }}"> </script>
+    {% endblock js %}
+<!--end custom js-->
