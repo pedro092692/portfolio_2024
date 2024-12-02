@@ -2,6 +2,7 @@ from flask import Flask
 from config import Config
 from app.extensions import Bootstrap5
 from app.extensions import db
+from app.extensions import Migrate
 from app.database import DataBase
 
 
@@ -12,6 +13,7 @@ def create_app(config_class=Config):
     # database
     app_db = DataBase(db, app)
     app_db.create_tables()
+    Migrate(app, db)
 
     # plugins
     bootstrap = Bootstrap5(app)
