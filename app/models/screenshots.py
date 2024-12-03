@@ -1,5 +1,4 @@
 from app.extensions import db, Integer, String, relationship, Mapped, mapped_column, List, ForeignKey
-from app.models.work import Work
 
 
 class ScreenShot(db.Model):

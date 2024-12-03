@@ -1,6 +1,5 @@
 from app.extensions import db, Mapped, mapped_column, Integer, String, relationship, List
 from app.models.helpers import add_item
-from app.models.screenshots import ScreenShot
 
 
 class Work(db.Model):

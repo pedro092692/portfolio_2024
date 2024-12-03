@@ -3,7 +3,7 @@ from app.extensions import generate_password_hash
 
 # app models
 from app.models.user import User
-from app.models.work import Work
+from app.models.works import Work
 from app.models.screenshots import ScreenShot
 
 class DataBase:
