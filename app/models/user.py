@@ -1,8 +1,8 @@
-from app.extensions import db
+from app.extensions import db, UserMixin
 from app.models.helpers import add_item
 
 
-class User(db.Model):
+class User(db.Model, UserMixin):
     __tablename__ = 'users'
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100))
@@ -15,6 +15,12 @@ class User(db.Model):
     @staticmethod
     def create_user(*args):
         return add_item(User, *args)
+
+    @staticmethod
+    def find_user(email):
+        query = db.session.query(User).filter_by(email=email)
+        user = db.session.execute(query).scalar()
+        return user
 
     @staticmethod
     def get_user_id(user_id):

@@ -1,5 +1,6 @@
-
 {% extends 'base.html' %}
+<!--import macros-->
+{% from 'security/_render_error.html' import render_form_error %}
 <!--custom css-->
 {% block css %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/security/login.css') }}">
@@ -14,15 +15,22 @@
 
 <!--content-->
 {% block content %}
-    <form action="" class="form-signin" autocomplete="off">
+    <form action="" method="POST" class="form-signin" autocomplete="off">
         <img class="mb-4 rounded-circle" src="{{ url_for('static', filename='img/profile_photo.png') }}" alt=""
              width="80" height="80">
-        <h1 class="h3 mb-3 font-weight-normal">Welcome Please sign in</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Welcome, Please sign in</h1>
+        {{ form.csrf_token }}
         {{ form.email.label(class='sr-only') }}
+        <!--errors-->
+        {{ render_form_error(form.email) }}
         {{ form.email(class="form-control", placeholder="Email address") }}
-        {{ form.password.label(class='sr-only') }}
+        {{ form.password.label(class="sr-only") }}
         {{ form.password(class="form-control", placeholder="Password", autocomplete="off") }}
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <!--errors-->
+        {{ render_form_error(form.password) }}
+        <!--flash messages-->
+        {% include 'security/_messages.html' %}
+        {{ form.submit(class="btn btn-lg btn-primary btn-block") }}
     </form>
 
 {% endblock content %}
