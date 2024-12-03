@@ -10,4 +10,5 @@ class Work(db.Model):
     subtitle: Mapped[str] = mapped_column(String(150), nullable=False)
     technology: Mapped[str] = mapped_column(String(150), nullable=False)
     image_url: Mapped[str] = mapped_column(String(150), nullable=False)
+    summary: Mapped[str] = mapped_column(String(500), nullable=False)
     screenshots: Mapped[List["ScreenShot"]] = relationship(back_populates="work",  cascade="all,delete")
