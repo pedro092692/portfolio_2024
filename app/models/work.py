@@ -1,5 +1,6 @@
-from app.extensions import db, Mapped, mapped_column, Integer, String, relationship
+from app.extensions import db, Mapped, mapped_column, Integer, String, relationship, List
 from app.models.helpers import add_item
+from app.models.screenshots import ScreenShot
 
 
 class Work(db.Model):
@@ -10,4 +11,4 @@ class Work(db.Model):
     subtitle: Mapped[str] = mapped_column(String(150), nullable=False)
     technology: Mapped[str] = mapped_column(String(150), nullable=False)
     image_url: Mapped[str] = mapped_column(String(150), nullable=False)
-
+    screenshots: Mapped[List["ScreenShot"]] = relationship(back_populates="work",  cascade="all,delete")
