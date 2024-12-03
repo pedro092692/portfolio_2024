@@ -18,3 +18,8 @@ class Work(db.Model):
     @staticmethod
     def add_work(*args):
         return add_item(Work, *args)
+
+    @staticmethod
+    def get_works():
+        works = db.session.query(Work).all()
+        return works

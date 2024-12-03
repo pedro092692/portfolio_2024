@@ -12,7 +12,8 @@ def index():
 
 @bp.route('/works')
 def works():
-    return render_template('admin/work/index.html')
+    content = Work.get_works()
+    return render_template('admin/work/index.html', works=content)
 
 
 @bp.route('/work/add', methods=['GET', 'POST'])

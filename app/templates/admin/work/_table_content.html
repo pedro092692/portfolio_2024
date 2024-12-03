@@ -1,0 +1,33 @@
+<div class="my-3 p-3 bg-white rounded box-shadow">
+  <div class="table-responsive p-0">
+    <table class="table table-hover text-nowrap">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Subtitle</th>
+          <th>Technology</th>
+          <th>Image URL</th>
+          <th>Summary</th>
+          <th>Project URL</th>
+          <th>Repository URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for work in works %}
+            <tr>
+                <td><a class="cursor-pointer text-dark" data-turbo="false"
+                       href="">
+                  {{ work.title|capitalize }}</a></td>
+                <td>{{ work.subtitle }}</td>
+                <td>{{ work.technology }}</td>
+                <td>{{ work.image_url | truncate(20, True, '...') }}</td>
+                <td>{{ work.summary | truncate(10, True, '...') }}</td>
+                <td>{{ work.url  | truncate(20, True, '...') if work.url else 'None' }}</td>
+                <td>{{ work.repository_url  | truncate(20, True, '...') }}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- /.card -->
