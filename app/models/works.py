@@ -11,6 +11,8 @@ class Work(db.Model):
     technology: Mapped[str] = mapped_column(String(150), nullable=False)
     image_url: Mapped[str] = mapped_column(String(150), nullable=False)
     summary: Mapped[str] = mapped_column(String(500), nullable=False)
+    url: Mapped[str] = mapped_column(String, nullable=True)
+    repository_url: Mapped[str] = mapped_column(String, nullable=False)
     screenshots: Mapped[List["ScreenShot"]] = relationship(back_populates="work",  cascade="all,delete")
 
     @staticmethod
