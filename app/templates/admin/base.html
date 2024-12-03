@@ -77,3 +77,9 @@
 {% endblock content %}
 
 <!--end content-->
+
+<!--custom js-->
+    {% block js %}
+        <script src="{{ url_for('static', filename='js/change_bg_admin.js') }}"> </script>
+    {% endblock js %}
+<!--end custom js-->

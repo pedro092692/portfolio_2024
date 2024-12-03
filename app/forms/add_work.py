@@ -7,5 +7,5 @@ class AddWork(FlaskForm):
     technology = StringField('Work Used Technology', validators=[DataRequired()])
     image_url = StringField('Work Image URL', validators=[DataRequired(), URL()],
                             render_kw={'placeholder': 'Image URL'})
-    summary = StringField('Word Summary', validators=[DataRequired()])
+    summary = StringField('Work Summary', validators=[DataRequired()])
     submit = SubmitField('Upload Work')

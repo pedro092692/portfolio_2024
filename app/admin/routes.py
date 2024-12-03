@@ -1,5 +1,7 @@
 from app.admin import bp
 from flask import render_template
+# forms
+from app.forms.add_work import AddWork
 
 
 @bp.route('/')
@@ -9,6 +11,7 @@ def index():
 
 @bp.route('/works')
 def works():
-    return render_template('admin/work.html')
+    form = AddWork()
+    return render_template('admin/work/index.html', form=form)
 
 
