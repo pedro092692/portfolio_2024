@@ -25,8 +25,10 @@ def add_work():
         technology = form.technology.data
         img_url = form.image_url.data
         summary = form.summary.data
+        project_url = form.work_url.data
+        repository_url = form.work_repository_url.data
 
-        Work.add_work(title, subtitle, technology, img_url, summary)
+        Work.add_work(title, subtitle, technology, img_url, summary, project_url, repository_url)
 
         return redirect(url_for('admin.works'))
 
