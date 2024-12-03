@@ -4,5 +4,5 @@ from app.main import bp
 
 @bp.route('/', methods=['GET'])
 def home():
-    return render_template('main/index.html')
+    return render_template('main/base.html')
 
