@@ -12,3 +12,7 @@ class Work(db.Model):
     image_url: Mapped[str] = mapped_column(String(150), nullable=False)
     summary: Mapped[str] = mapped_column(String(500), nullable=False)
     screenshots: Mapped[List["ScreenShot"]] = relationship(back_populates="work",  cascade="all,delete")
+
+    @staticmethod
+    def add_work(*args):
+        return add_item(Work, *args)
