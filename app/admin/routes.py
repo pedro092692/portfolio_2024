@@ -65,5 +65,11 @@ def work(id_work):
     form.work_repository_url.data = work_item.repository_url
     form.work_url.data = work_item.url
 
-    return render_template('admin/work/work.html', form=form)
+    return render_template('admin/work/work.html', form=form, work=work_item)
 
+
+@bp.route('/work/delete/<id_work>', methods=['POST'])
+def delete_work(id_work):
+    work_item = Work.get_work(id_work)
+    Work.delete_work(work_item)
+    return redirect(url_for('admin.works'))
