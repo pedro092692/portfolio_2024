@@ -40,9 +40,23 @@ def add_work():
 def work(id_work):
     form = AddWork()
     form.submit.label.text = 'Update Work'
+    work_item = Work.get_work(id_work)
+
+    # update work
+    if form.validate_on_submit():
+        title = form.title.data
+        subtitle = form.subtitle.data
+        technology = form.technology.data
+        image_url = form.image_url.data
+        summary = form.summary.data
+        url = form.work_url.data
+        repository_url = form.work_repository_url.data
+
+        # update object work
+        Work.update_work(work_item, title, subtitle, technology, image_url, summary, url, repository_url)
+        return redirect(url_for('admin.works'))
 
     # work info
-    work_item = Work.get_work(id_work)
     form.title.data = work_item.title
     form.subtitle.data = work_item.subtitle
     form.technology.data = work_item.technology
