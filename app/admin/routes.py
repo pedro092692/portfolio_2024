@@ -7,7 +7,8 @@ from app.forms.add_work import AddWork
 
 @bp.route('/')
 def index():
-    return render_template('admin/index.html')
+    total_works = len(Work.get_works())
+    return render_template('admin/index.html', total_works=total_works)
 
 
 @bp.route('/works')
