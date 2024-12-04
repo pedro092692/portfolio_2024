@@ -1,5 +1,5 @@
 from app.extensions import db, Mapped, mapped_column, Integer, String, relationship, List
-from app.models.helpers import add_item
+from app.models.helpers import add_item, get_item
 
 
 class Work(db.Model):
@@ -21,5 +21,9 @@ class Work(db.Model):
 
     @staticmethod
     def get_works():
-        works = db.session.query(Work).all()
+        works = db.session.query(Work).order_by(Work.id.desc()).all()
         return works
+
+    @staticmethod
+    def get_work(work_id):
+        return get_item(Work, work_id)

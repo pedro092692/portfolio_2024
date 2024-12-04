@@ -15,9 +15,9 @@
       <tbody>
         {% for work in works %}
             <tr>
-                <td><a class="cursor-pointer text-dark" data-turbo="false"
-                       href="">
-                  {{ work.title|capitalize }}</a></td>
+                <td class=""><strong><a class="cursor-pointer"
+                       href="{{ url_for('admin.work', id_work=work.id) }}">
+                  {{ work.title|capitalize }}</a></strong></td>
                 <td>{{ work.subtitle }}</td>
                 <td>{{ work.technology }}</td>
                 <td>{{ work.image_url | truncate(20, True, '...') }}</td>

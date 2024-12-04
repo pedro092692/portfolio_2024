@@ -1,0 +1,11 @@
+{% extends 'admin/base.html' %}
+
+{% block section_main %}
+    {% block main_title %}
+        <h2>work title</h2>
+    {% endblock main_title %}
+
+    <!--main content-->
+    {{render_form(form)}}
+    <!--end main content>
+{% endblock section_main %}

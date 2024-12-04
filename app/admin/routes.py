@@ -36,3 +36,20 @@ def add_work():
     return render_template('admin/work/add.html', form=form)
 
 
+@bp.route('/work/<id_work>', methods=['GET', 'POST'])
+def work(id_work):
+    form = AddWork()
+    form.submit.label.text = 'Update Work'
+
+    # work info
+    work_item = Work.get_work(id_work)
+    form.title.data = work_item.title
+    form.subtitle.data = work_item.subtitle
+    form.technology.data = work_item.technology
+    form.summary.data = work_item.summary
+    form.image_url.data = work_item.image_url
+    form.work_repository_url.data = work_item.repository_url
+    form.work_url.data = work_item.url
+
+    return render_template('admin/work/work.html', form=form)
+
