@@ -5,6 +5,7 @@ from app.models.message import Message
 from app.models.screenshots import ScreenShot
 # forms
 from app.forms.add_work import AddWork
+from app.forms.add_message import AddMessage
 
 
 @bp.route('/')
@@ -123,5 +124,23 @@ def messages():
 @bp.route('/message/<message_id>')
 def message_info(message_id):
     message = Message.get_message(message_id)
-    return render_template('admin/messages/message.html', message=message)
+    form = AddMessage()
+    # fill form
+    form.email.data = message.email
+    form.name.data = message.name
+    form.subject.data = message.subject
+    form.message.data = message.message
+
+    # set all fields in readonly mode
+    for name, field in form._fields.items():
+        field.render_kw = {'readonly': True}
+
+    return render_template('admin/messages/message.html', message=message, form=form)
+
+
+@bp.route('/message/delete/<message_id>', methods=['POST'])
+def delete_message(message_id):
+    message = Message.get_message(message_id)
+    Message.delete_message(message)
+    return redirect(url_for('admin.messages'))
 

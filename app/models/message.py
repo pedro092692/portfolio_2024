@@ -1,5 +1,5 @@
 from app.extensions import db, Integer, String, DateTime, Mapped, mapped_column, datetime
-from app.models.helpers import add_item, get_item
+from app.models.helpers import add_item, get_item, delete_item
 
 
 class Message(db.Model):
@@ -21,6 +21,10 @@ class Message(db.Model):
     @staticmethod
     def get_message(message_id):
         return get_item(Message, message_id)
+
+    @staticmethod
+    def delete_message(message_obj):
+        return delete_item(message_obj)
 
 
 

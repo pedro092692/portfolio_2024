@@ -12,7 +12,11 @@
     <!-- menu -->
 
     <!--messages table-->
-    {% include 'admin/messages/_table_content.html' %}
+    {% if messages.total != 0 %}
+        {% include 'admin/messages/_table_content.html' %}
+    {% else %}
+        <h5>You have not messages</h5>
+    {% endif %}
     <!--end messages table-->
     <!--end main content>
 {% endblock section_main %}
