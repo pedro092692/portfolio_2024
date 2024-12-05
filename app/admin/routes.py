@@ -73,6 +73,11 @@ def work(id_work):
     form.image_url.data = work_item.image_url
     form.work_repository_url.data = work_item.repository_url
     form.work_url.data = work_item.url
+    # fill work screenshots
+    screenshots = work_item.screenshots
+    form_screenshots = [form.screenshot_1, form.screenshot_2, form.screenshot_3]
+    for i in range(len(screenshots)):
+        form_screenshots[i].data = screenshots[i].img_url
 
     return render_template('admin/work/work.html', form=form, work=work_item)
 
