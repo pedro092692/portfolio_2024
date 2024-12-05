@@ -1,3 +1,8 @@
-body{
+.hero{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     background: red;
+    padding: 40px;
+    justify-content: end;
 }
