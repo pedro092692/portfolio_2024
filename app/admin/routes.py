@@ -110,3 +110,9 @@ def delete_work(id_work):
     work_item = Work.get_work(id_work)
     Work.delete_work(work_item)
     return redirect(url_for('admin.works'))
+
+
+@bp.route('/messages', methods=['GET'])
+def messages():
+    return render_template('admin/messages/index.html')
+
