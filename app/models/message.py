@@ -10,4 +10,8 @@ class Message(db.Model):
     message: Mapped[str] = mapped_column(String(500), nullable=False)
     date: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.now())
 
+    @staticmethod
+    def get_messages():
+        messages = db.session.query(Message).order_by(Message.id.desc()).all()
+        return messages
 

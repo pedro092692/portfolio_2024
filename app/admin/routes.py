@@ -1,6 +1,7 @@
 from app.admin import bp
 from flask import render_template, redirect, url_for
 from app.models.works import Work
+from app.models.message import Message
 from app.models.screenshots import ScreenShot
 # forms
 from app.forms.add_work import AddWork
@@ -9,7 +10,8 @@ from app.forms.add_work import AddWork
 @bp.route('/')
 def index():
     total_works = len(Work.get_works())
-    return render_template('admin/index.html', total_works=total_works)
+    total_messages = len(Message.get_messages())
+    return render_template('admin/index.html', total_works=total_works, total_messages=total_messages)
 
 
 @bp.route('/works')
