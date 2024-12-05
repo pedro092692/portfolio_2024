@@ -5,6 +5,8 @@ from app.extensions import generate_password_hash
 from app.models.user import User
 from app.models.works import Work
 from app.models.screenshots import ScreenShot
+from app.models.message import Message
+
 
 class DataBase:
     def __init__(self, db, app):

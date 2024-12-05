@@ -4,10 +4,11 @@ from flask_bootstrap import Bootstrap4
 from flask_wtf.csrf import CSRFProtect
 from sqlalchemy.orm import Mapped, mapped_column
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Integer, String, ForeignKey
+from sqlalchemy import Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from typing import List
 from flask_migrate import Migrate
+from datetime import datetime
 from dotenv import load_dotenv
 
 # Configure login manager
