@@ -60,9 +60,32 @@ def work(id_work):
         summary = form.summary.data
         url = form.work_url.data
         repository_url = form.work_repository_url.data
+        f_screens = [form.screenshot_1, form.screenshot_2, form.screenshot_3]
 
         # update object work
         Work.update_work(work_item, title, subtitle, technology, image_url, summary, url, repository_url)
+
+        # update screenshots
+        for i in range(len(work_item.screenshots)):
+            if work_item.screenshots[i].img_url != f_screens[i].data:
+                if f_screens[i].data == '':
+                    # delete screenshot
+                    ScreenShot.delete_screenshot(work_item.screenshots[i])
+                    return redirect(url_for('admin.works'))
+                else:
+                    # update
+                    ScreenShot.update_screenshot(work_item.screenshots[i], work_item.id, f_screens[i].data)
+
+        # add screenshot if work obj has less than 3
+        if len(work_item.screenshots) < 3:
+            for i in range(len(f_screens)):
+                if f_screens[i].data != '':
+                    try:
+                        print(work_item.screenshots[i].img_url)
+                    except IndexError:
+                        # add new screenshot
+                        ScreenShot.add_screenshot(work_item.id, f_screens[i].data)
+
         return redirect(url_for('admin.works'))
 
     # work info

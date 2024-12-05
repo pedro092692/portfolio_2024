@@ -11,14 +11,19 @@
 
     <!-- work screenshots -->
     <div class="container mt-4">
-        <h5>Work Screenshots</h5>
-        <div class="row">
-            {% for screenshot in work.screenshots %}
-                <div class="col-md-4">
-                    <img src="{{ screenshot.img_url }}" alt="work screenshot" width="250">
-                </div>
-            {% endfor %}
-        </div>
+        {% if not work.screenshots %}
+            <h5>This work has not Screenshots</h5>
+        {% else %}
+            <h5>Work Screenshots</h5>
+            <div class="row">
+                {% for screenshot in work.screenshots %}
+                    <div class="col-md-4">
+                        <img src="{{ screenshot.img_url }}" alt="work screenshot" width="250">
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
 
     </div>
     <!--end work screenshots -->

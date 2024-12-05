@@ -1,5 +1,5 @@
 from app.extensions import db, Integer, String, relationship, Mapped, mapped_column, List, ForeignKey
-from app.models.helpers import add_item
+from app.models.helpers import add_item, update_item, delete_item
 
 
 class ScreenShot(db.Model):
@@ -13,5 +13,13 @@ class ScreenShot(db.Model):
     @staticmethod
     def add_screenshot(*args):
         return add_item(ScreenShot, *args)
+
+    @staticmethod
+    def update_screenshot(obj_item, *args):
+        return update_item(obj_item, *args)
+
+    @staticmethod
+    def delete_screenshot(obj_item):
+        return delete_item(obj_item)
 
 
