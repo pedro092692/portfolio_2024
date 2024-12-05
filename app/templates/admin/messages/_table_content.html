@@ -1,0 +1,29 @@
+<div class="my-3 p-3 bg-white rounded box-shadow">
+  <div class="table-responsive p-0">
+    <table class="table table-hover text-nowrap">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Name</th>
+          <th>Subject</th>
+          <th>Message</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for message in messages %}
+            <tr>
+                <td class=""><strong><a class="cursor-pointer"
+                       href="">
+                  {{ message.email }}</a></strong></td>
+                <td>{{ message.name }}</td>
+                <td>{{ message.subject }}</td>
+                <td>{{ message.message | truncate(20, True, '...') }}</td>
+                <td>{{ message.date }}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- /.card -->

@@ -11,7 +11,10 @@ class Message(db.Model):
     date: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.now())
 
     @staticmethod
-    def get_messages():
-        messages = db.session.query(Message).order_by(Message.id.desc()).all()
+    def get_messages(paginate=False):
+        if paginate:
+            messages = db.paginate(db.select(Message).order_by(Message.id.desc()), per_page=8)
+        else:
+            messages = db.session.query(Message).order_by(Message.id.desc()).all()
         return messages
 

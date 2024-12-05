@@ -116,5 +116,6 @@ def delete_work(id_work):
 
 @bp.route('/messages', methods=['GET'])
 def messages():
-    return render_template('admin/messages/index.html')
+    content = Message.get_messages(paginate=True)
+    return render_template('admin/messages/index.html', messages=content)
 
