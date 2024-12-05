@@ -14,7 +14,7 @@
         {% for message in messages %}
             <tr>
                 <td class=""><strong><a class="cursor-pointer"
-                       href="">
+                       href="{{ url_for('admin.message_info', message_id=message.id) }}">
                   {{ message.email }}</a></strong></td>
                 <td>{{ message.name }}</td>
                 <td>{{ message.subject }}</td>

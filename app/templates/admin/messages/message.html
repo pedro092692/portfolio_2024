@@ -1,0 +1,21 @@
+{% extends 'admin/base.html' %}
+
+{% block section_main %}
+    {% block main_title %}
+        <h2>{{ message.subject }}</h2>
+    {% endblock main_title %}
+
+    <!--main content-->
+        <h5>Message info:</h5>
+        <p>Email:</p>
+        <h4>{{ message.email }}</h4>
+    <!--end main content-->
+
+
+    <!--delete work form-->
+    <br>
+    <form action="" method="POST">
+        <input type="submit" value="Delete this message" class="btn btn-danger">
+    </form>
+
+{% endblock section_main %}

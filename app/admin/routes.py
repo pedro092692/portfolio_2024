@@ -119,3 +119,9 @@ def messages():
     content = Message.get_messages(paginate=True)
     return render_template('admin/messages/index.html', messages=content)
 
+
+@bp.route('/message/<message_id>')
+def message_info(message_id):
+    message = Message.get_message(message_id)
+    return render_template('admin/messages/message.html', message=message)
+

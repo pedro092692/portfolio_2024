@@ -1,5 +1,5 @@
 from app.extensions import db, Integer, String, DateTime, Mapped, mapped_column, datetime
-from app.models.helpers import add_item
+from app.models.helpers import add_item, get_item
 
 
 class Message(db.Model):
@@ -17,4 +17,10 @@ class Message(db.Model):
         else:
             messages = db.session.query(Message).order_by(Message.id.desc()).all()
         return messages
+
+    @staticmethod
+    def get_message(message_id):
+        return get_item(Message, message_id)
+
+
 
