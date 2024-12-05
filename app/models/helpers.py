@@ -13,6 +13,8 @@ def add_item(model, *args):
     db.session.add(new_item)
     db.session.commit()
 
+    return new_item
+
 
 def get_item(model, item_id):
     item = db.get_or_404(model, item_id)

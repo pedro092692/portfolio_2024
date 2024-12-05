@@ -1,6 +1,7 @@
 from app.admin import bp
 from flask import render_template, redirect, url_for
 from app.models.works import Work
+from app.models.screenshots import ScreenShot
 # forms
 from app.forms.add_work import AddWork
 
@@ -30,7 +31,14 @@ def add_work():
         project_url = form.work_url.data
         repository_url = form.work_repository_url.data
 
-        Work.add_work(title, subtitle, technology, img_url, summary, project_url, repository_url)
+        new_work = Work.add_work(title, subtitle, technology, img_url, summary, project_url, repository_url)
+
+        # add screenshots
+        screenshots = [form.screenshot_1.data, form.screenshot_2.data, form.screenshot_3.data]
+
+        for screenshot in screenshots:
+            if screenshot:
+                ScreenShot.add_screenshot(new_work.id, screenshot)
 
         return redirect(url_for('admin.works'))
 
