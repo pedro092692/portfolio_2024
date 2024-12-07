@@ -3,7 +3,10 @@
     flex-direction: column;
     height: 100vh;
     background: red;
-    padding: 40px;
+    padding: 40px 40px 0px 40px;
+    background-image: url('/static/img/background.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
 .hero nav{
@@ -22,5 +25,11 @@ nav ul{
     display: flex;
     align-items: end;
     flex: 1;
-    background: yellow;
+}
+
+.hero-content h2{
+    width: 85%;
+    font-size: 130px;
+    text-transform: capitalize;
+    color: white;
 }
