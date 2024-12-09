@@ -28,8 +28,25 @@ nav ul{
 }
 
 .hero-content h2{
-    width: 85%;
-    font-size: 130px;
+    width: 90%;
+    font-size: 80px;
     text-transform: capitalize;
     color: white;
 }
+
+/* post hero section */
+.post-hero{
+    height: 100vh;
+    background: black;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 40px 40px 40px;
+}
+
+.post-hero h2{
+    color: white;
+    font-size: 30px;
+}
+
+
+/* end post hero section*/
