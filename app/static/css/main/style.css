@@ -9,7 +9,7 @@ body{
     flex-direction: column;
     height: 100vh;
     background: red;
-    padding: 40px 40px 0px 40px;
+    padding: 32px 32px 0px 32px;
     background-image: url('/static/img/background.jpg');
     background-position: center;
     background-size: cover;
@@ -56,7 +56,7 @@ nav ul{
     background: black;
     display: flex;
     flex-direction: column;
-    padding: 0px 40px 40px 40px;
+    padding: 0px 32px 160px 32px;
     gap: 184px;
 }
 
@@ -88,5 +88,30 @@ nav ul{
     justify-content: center;
 }
 
-
 /* end post hero section*/
+
+/* work section */
+.work-section{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 32px;
+    gap: 48px;
+}
+
+.work-section .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title h1{
+    color: black;
+    font-size: 160px;
+    letter-spacing: -5%;
+}
+
+.title img{
+    width: 150px;
+}
+
+/* end work section */

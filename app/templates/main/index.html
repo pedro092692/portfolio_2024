@@ -12,56 +12,24 @@
     <!--hero section-->
     <section class="hero">
         <!--nav-->
-        <nav>
-            <a href="#">
-                <img src="{{ url_for('static', filename='img/pedro_bastidas_dev_logo.svg') }}"
-                     alt="pedro bastidas dev logo" width="235">
-            </a>
-
-            <ul>
-                <a href="">
-                    <li>work</li>
-                </a>
-                <a href="">
-                    <li>about</li>
-                </a>
-                <a href="">
-                    <li>contact</li>
-                </a>
-            </ul>
-        </nav>
-        <div class="hero-content">
-            <h2>
-                <span class="thin">Hello, I'm Pedro Bastidas A passionate</span> <span class="bold">developer</span>
-            </h2>
-        </div>
+        {% include 'main/nav/nav.html' %}
         <!--end nav-->
+
+        <!-- hero content-->
+        {% include 'main/hero/hero.html' %}
+        <!-- end hero content-->
     </section>
     <!--end hero-->
 
     <!-- post hero section-->
     <section class="post-hero">
-        <h2> <span class="thin">specializing in</span> <span class="bold">Python, PHP,</span> <span class="thin">and</span>
-            <span class="bold">JavaScript.</span>
-        </h2>
-        <p class='info'>
-            With a keen interest in creating impactful web applications, I focus on building intuitive and functional
-            projects using modern frameworks and tools. My expertise spans Flask, Sqlalchemy, pandas, Laravel,
-            Tailwind CSS, and object-oriented programming (OOP) concepts, which I apply to develop scalable and
-            efficient applications.
-        </p>
-        <button>
-            Get in touch
-            <img src="{{ url_for('static', filename='img/icons/icon-arrow-right.svg') }}" alt="">
-        </button>
+       {% include 'main/hero/post-hero.html' %}
     </section>
     <!-- end post hero section-->
-    <!-- section work -->
+
+<!-- section work -->
     <section class="work-section">
-        <p>works goes here</p>
-        <button>
-            Get in touch
-        </button>
+        {% include 'main/work/work.html' %}
     </section>
     <!-- end section work-->
 
