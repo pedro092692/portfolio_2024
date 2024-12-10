@@ -1,3 +1,9 @@
+body{
+    font-family: "Roboto", serif;
+}
+
+/*hero section*/
+
 .hero{
     display: flex;
     flex-direction: column;
@@ -34,18 +40,52 @@ nav ul{
     color: white;
 }
 
+.thin{
+    font-weight: 200;
+}
+
+.bold{
+    font-weight: 700;
+}
+
+/* end hero section*/
+
 /* post hero section */
 .post-hero{
-    height: 100vh;
+    min-height: 100vh;
     background: black;
     display: flex;
     flex-direction: column;
     padding: 0px 40px 40px 40px;
+    gap: 184px;
 }
 
 .post-hero h2{
     color: white;
-    font-size: 30px;
+    font-size: 80px;
+    text-transform: capitalize;
+}
+
+.post-hero .info{
+    color: white;
+    line-height: 200%;
+    font-size: 26px;
+    font-weight: 200;
+}
+
+.post-hero button{
+    width: 376px;
+    height: 64px;
+    font-weight: 200;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: 1px solid white;
+    border-radius: 50px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
 
