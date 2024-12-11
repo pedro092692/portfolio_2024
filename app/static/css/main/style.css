@@ -114,4 +114,42 @@ nav ul{
     width: 150px;
 }
 
+/* work wrapper */
+.work-section .work-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/* end work wrapper */
+
+/* work info */
+
+.work-container{
+    display: flex;
+    gap: 15px;
+}
+
+.work-container div{
+    width: 50%;
+}
+
+.work-wrapper .work-card{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 624px;
+    padding: 50px;
+    border-radius: 24px;
+    overflow: hidden;
+    color: white;
+    overflow: hidden;
+}
+
+#half{
+    width: 50%;
+}
+
+/* end work info */
+
 /* end work section */
