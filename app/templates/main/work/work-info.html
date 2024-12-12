@@ -1,5 +1,5 @@
 {% for work in works %}
-    <div class="work-card  {{ 'full' if work.id == 4 }}" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    <div class="work-card  {{ 'full' if work.full_width }}" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                         url('{{ work.image_url }}'); background-size: cover; background-position: center;">
          <div class="work-info">
             <h2>{{ work.title }}</h2>
@@ -7,7 +7,7 @@
          </div>
 
         <div class="work-category">
-            <h4>Work category</h4>
+            <h4>{{ work.work_category }}</h4>
         </div>
     </div>
 {% endfor %}
