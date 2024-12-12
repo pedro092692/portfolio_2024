@@ -116,22 +116,14 @@ nav ul{
 
 /* work wrapper */
 .work-section .work-wrapper{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 /* end work wrapper */
 
 /* work info */
 
-.work-container{
-    display: flex;
-    gap: 15px;
-}
-
-.work-container div{
-    width: 50%;
-}
 
 .work-wrapper .work-card{
     position: relative;
@@ -146,8 +138,8 @@ nav ul{
     overflow: hidden;
 }
 
-#half{
-    width: 50%;
+.work-wrapper .full{
+    grid-column: 1 / 4;
 }
 
 /* end work info */
