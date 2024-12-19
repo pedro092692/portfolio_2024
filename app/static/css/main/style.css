@@ -144,7 +144,7 @@ nav ul{
 }
 
 .work-wrapper .full{
-    grid-column: 1 / 4;
+    grid-column: span 2;
 }
 
 /* end work info */
