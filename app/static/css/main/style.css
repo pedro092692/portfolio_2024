@@ -136,6 +136,11 @@ nav ul{
     overflow: hidden;
     color: white;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.work-wrapper .work-card:hover{
+    background-color: red;
 }
 
 .work-wrapper .full{

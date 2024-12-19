@@ -15,6 +15,7 @@ class Work(db.Model):
     repository_url: Mapped[str] = mapped_column(String, nullable=False)
     work_category: Mapped[str] = mapped_column(String, nullable=False)
     full_width: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
+    position: Mapped[int] = mapped_column(Integer, nullable=True)
     screenshots: Mapped[List["ScreenShot"]] = relationship(back_populates="work",  cascade="all,delete")
 
     @staticmethod
