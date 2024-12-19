@@ -13,6 +13,7 @@ class AddWork(FlaskForm):
                                       render_kw={'placeholder': 'Repository URL'})
     work_category = StringField('Work category', validators=[DataRequired()])
     full_width = SelectField('Full width for this work ?', choices=[('0', 'False'), ('1', 'True')])
+    work_position = SelectField('Work Display Position', choices=[(str(i), str(i)) for i in range(1, 15)])
     screenshot_1 = StringField('Screenshot 1', render_kw={'placeholder': 'Screenshot URL'})
     screenshot_2 = StringField('Screenshot 2', render_kw={'placeholder': 'Screenshot URL'})
     screenshot_3 = StringField('Screenshot 3', render_kw={'placeholder': 'Screenshot URL'})

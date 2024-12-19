@@ -35,9 +35,10 @@ def add_work():
         repository_url = form.work_repository_url.data
         work_category = form.work_category.data
         full_with = int(form.full_width.data)
+        work_position = int(form.work_position.data)
 
         new_work = Work.add_work(title, subtitle, technology, img_url, summary, project_url, repository_url,
-                                 work_category, full_with)
+                                 work_category, full_with, work_position)
 
         # add screenshots
         screenshots = [form.screenshot_1.data, form.screenshot_2.data, form.screenshot_3.data]
@@ -68,11 +69,12 @@ def work(id_work):
         repository_url = form.work_repository_url.data
         work_category = form.work_category.data
         full_width = int(form.full_width.data)
+        work_position = int(form.work_position.data)
         f_screens = [form.screenshot_1, form.screenshot_2, form.screenshot_3]
 
         # update object work
         Work.update_work(work_item, title, subtitle, technology, image_url, summary, url, repository_url,
-                         work_category, full_width)
+                         work_category, full_width, work_position)
 
         # update screenshots
         for i in range(len(work_item.screenshots)):
@@ -110,6 +112,7 @@ def work(id_work):
     form.full_width.data = '0'
     if work_item.full_width:
         form.full_width.data = '1'
+    form.work_position.data = str(work_item.position)
 
     # fill work screenshots
     screenshots = work_item.screenshots

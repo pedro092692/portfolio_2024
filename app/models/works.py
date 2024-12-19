@@ -24,7 +24,7 @@ class Work(db.Model):
 
     @staticmethod
     def get_works():
-        works = db.session.query(Work).order_by(Work.id.desc()).all()
+        works = db.session.query(Work).order_by(Work.position).all()
         return works
 
     @staticmethod
