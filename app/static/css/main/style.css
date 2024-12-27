@@ -94,11 +94,12 @@ nav ul{
 .work-section{
     display: flex;
     flex-direction: column;
-    padding: 40px 32px;
+    /*padding: 40px 32px;*/
     gap: 48px;
 }
 
 .work-section .title{
+    padding: 0px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -116,6 +117,7 @@ nav ul{
 
 /* work wrapper */
 .work-section .work-wrapper{
+    padding: 0px 32px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
@@ -124,9 +126,7 @@ nav ul{
 
 /* work info */
 
-
 .work-wrapper .work-card{
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -150,3 +150,40 @@ nav ul{
 /* end work info */
 
 /* end work section */
+
+/* about section */
+.work-section .about{
+    background-color: black;
+    color: white;
+    min-height: 850px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    padding: 40px 32px;
+}
+
+.about .about-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .about-title h1{
+    color: white;
+    font-size: 160px;
+    letter-spacing: -5%;
+}
+
+.about .about-title img{
+    transform: rotate(90deg);
+    width: 150px;
+}
+
+.about p{
+    color: white;
+    line-height: 250%;
+    font-size: 32px;
+    font-weight: 200;
+}
+/* end about section */

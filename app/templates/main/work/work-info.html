@@ -1,15 +1,40 @@
-{% for work in works %}
-    <div class="work-card  {{ 'full' if work.full_width }}" style="background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-                        url('{{ work.image_url }}'); background-size: cover; background-position: center;">
-         <div class="work-info">
-            <h2>{{ work.title }}</h2>
-            <h3>{{ work.subtitle }}</h3>
-         </div>
-        <div class="work-category">
-            <h4>{{ work.work_category }}</h4>
+<!--first show 3rd works-->
+<div class="work-wrapper">
+    {% for work in works[0:3] %}
+        <div class="work-card  {{ 'full' if work.full_width }}" style="background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                            url('{{ work.image_url }}'); background-size: cover; background-position: center;">
+             <div class="work-info">
+                <h2>{{ work.title }}</h2>
+                <h3>{{ works.subtitle }}</h3>
+             </div>
+            <div class="work-category">
+                <h4>{{ work.work_category }}</h4>
+            </div>
         </div>
-    </div>
-{% endfor %}
+    {% endfor %}
+</div>
+<!--after 3rd work show about me-->
+   {% include 'main/about/about.html' %}
+<!-- end about me -->
+
+<!--rest of works-->
+<div class="work-wrapper">
+    {% for work in works[3::] %}
+        <div class="work-card  {{ 'full' if work.full_width }}" style="background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+                            url('{{ work.image_url }}'); background-size: cover; background-position: center;">
+             <div class="work-info">
+                <h2>{{ work.title }}</h2>
+                <h3>{{ works.subtitle }}</h3>
+             </div>
+            <div class="work-category">
+                <h4>{{ work.work_category }}</h4>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
 
 
 <!--make a helper for render each work-->
