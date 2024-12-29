@@ -73,7 +73,7 @@ nav ul{
     font-weight: 200;
 }
 
-.post-hero button{
+.post-hero button, .about button{
     width: 376px;
     height: 64px;
     font-weight: 200;
@@ -186,4 +186,13 @@ nav ul{
     font-size: 32px;
     font-weight: 200;
 }
+
+.about a:hover{
+   text-decoration: none;
+}
+
+.about a{
+    margin: 32px 0;
+}
+
 /* end about section */
