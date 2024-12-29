@@ -3,7 +3,14 @@
         <h1>Contact</h1>
         <img src="{{ url_for('static', filename='img/icons/icon-arrow-right.svg') }}" alt="icon arrow right">
     </div>
-    <p>
-        Contact section
-    </p>
+    <!--render form-->
+        <form action="" method="POST">
+            {{ form.csrf_token }}
+            {{ form.email }}
+            {{ form.name }}
+            {{ form.subject }}
+            {{ form.message }}
+            {{ form.submit }}
+        </form>
+    <!--end render form-->
 </div>
