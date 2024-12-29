@@ -3,14 +3,37 @@
         <h1>Contact</h1>
         <img src="{{ url_for('static', filename='img/icons/icon-arrow-right.svg') }}" alt="icon arrow right">
     </div>
-    <!--render form-->
-        <form action="" method="POST">
-            {{ form.csrf_token }}
-            {{ form.email }}
-            {{ form.name }}
-            {{ form.subject }}
-            {{ form.message }}
-            {{ form.submit }}
-        </form>
-    <!--end render form-->
+    <div class="social-container">
+        <h2>Social Networks</h2>
+        <div class="social-networks">
+            <a href="https://github.com/pedro092692" target="_blank">
+                <img src="{{ url_for('static', filename='img/icons/linkedin.svg') }}" alt="github icon">
+            </a>
+            <a href="https://www.linkedin.com/in/pedro-bastidas-670a90102/" target="_blank">
+                <img src="{{ url_for('static', filename='img/icons/github.svg') }}" alt="linkedin icon">
+            </a>
+        </div>
+    </div>
+    <div class="contact-form-section">
+        <h2>let's talk</h2>
+
+        <div class="form-container">
+            <!--render form-->
+            <form action="" method="POST">
+                {{ form.csrf_token }}
+                {{ form.email.label }}
+                {{ form.email }}
+                {{ form.name.label }}
+                {{ form.name }}
+                {{ form.subject.label }}
+                {{ form.subject }}
+                {{ form.message.label }}
+                {{ form.message }}
+                <div>
+                    {{ form.submit }}
+                </div>
+            </form>
+            <!--end render form-->
+        </div>
+    </div>
 </div>

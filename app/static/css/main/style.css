@@ -199,4 +199,118 @@ nav ul{
 
 
 /* contact section /footer */
+.contact-section{
+    margin-top: 48px;
+    padding: 32px 32px;
+    background: black;
+    color: white;
+}
+
+.contact-section .contact{
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+}
+
+.contact .contact-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact .contact-title h1{
+    font-size: 160px;
+    letter-spacing: -5%;
+}
+
+.contact-title img{
+    transform: rotate(90deg);
+    width: 150px;
+}
+
+.contact .social-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.social-container h2{
+    font-size: 32px;
+    letter-spacing: -5%;
+    line-height: 92.5%;
+}
+
+.social-container .social-networks{
+    display: flex;
+    gap: 16px;
+}
+
+.social-networks img{
+    width: 64px;
+}
+
+.contact .contact-form-section{
+    display: flex;
+    gap: 16px;
+}
+
+.contact-form-section h2{
+    font-size: 160px;
+    letter-spacing: -5%;
+    line-height: 92.5%;
+    width: 350px;
+    text-transform: capitalize;
+}
+
+.contact-form-section .form-container{
+    flex: 1;
+    padding: 0px 64px;
+}
+
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-container form label{
+    font-size: 32px;
+    letter-spacing: -5%;
+    line-height: 92.5%;
+    font-weight: 600;
+}
+
+.form-container form input, textarea{
+    margin-bottom: 8px;
+    height: 64px;
+    background: #111111;
+    color: white;
+    font-size: 24px;
+    padding: 0px 8px;
+    border-radius: 16px;
+    border: 1px solid #303030;
+}
+
+.form-container form textarea{
+    min-height: 240px;
+    padding: 8px;
+    resize: none;
+}
+
+.form-container form input[type=submit]{
+    height: 64px;
+    font-weight: 200;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: 1px solid white;
+    border-radius: 50px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 70px;
+}
+
+
 /* end contact section /footer  */

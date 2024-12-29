@@ -9,4 +9,5 @@ class AddMessage(FlaskForm):
                                                                           message="Text must be between 10 and 500 "
                                                                                   "characters")
                                                    ])
-    submit = SubmitField('Send Message')
+    submit = SubmitField('Submit')
+
