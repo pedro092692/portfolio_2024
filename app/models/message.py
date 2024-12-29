@@ -5,7 +5,7 @@ from app.models.helpers import add_item, get_item, delete_item
 class Message(db.Model):
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     email: Mapped[str] = mapped_column(String(150), nullable=False)
-    name: Mapped[str] =  mapped_column(String(150), nullable=False)
+    name: Mapped[str] = mapped_column(String(150), nullable=False)
     subject: Mapped[str] = mapped_column(String(100), nullable=False)
     message: Mapped[str] = mapped_column(String(500), nullable=False)
     date: Mapped[datetime] = mapped_column(DateTime, nullable=False, default=datetime.now())
@@ -25,6 +25,20 @@ class Message(db.Model):
     @staticmethod
     def delete_message(message_obj):
         return delete_item(message_obj)
+
+    @staticmethod
+    def add_message(email, name, subject, message):
+        new_message = Message(
+            email=email,
+            name=name,
+            subject=subject,
+            message=message
+        )
+
+        db.session.add(new_message)
+        db.session.commit()
+
+        return new_message
 
 
 
