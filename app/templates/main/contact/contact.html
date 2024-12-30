@@ -1,4 +1,4 @@
-{% from 'main/_render_error.html' import render_form_error %}' %}
+{% from 'main/_render_error.html' import render_form_error %}
 
 <div class="contact">
     <div class="contact-title">
@@ -17,33 +17,37 @@
         </div>
     </div>
     <div class="contact-form-section">
-        <h2>let's talk</h2>
+        {% with messages = get_flashed_messages() %}
+            {% if not messages %}
+                <h2>let's talk</h2>
 
-        <div class="form-container">
-            <!--render form-->
-            <form action="" method="POST">
-                {{ form.csrf_token }}
-                {{ form.email.label }}
-                {{ form.email }}
-                <!--errors-->
-                {{ render_form_error(form.email) }}
-                {{ form.name.label }}
-                {{ form.name }}
-                <!--errors-->
-                {{ render_form_error(form.name) }}
-                {{ form.subject.label }}
-                {{ form.subject }}
-                <!--errors-->
-                {{ render_form_error(form.subject) }}
-                {{ form.message.label }}
-                {{ form.message }}
-                <!--errors-->
-                {{ render_form_error(form.message) }}
-                <div>
-                    {{ form.submit }}
+                <div class="form-container">
+                    <!--render form-->
+                    <form action="" method="POST">
+                        {{ form.csrf_token }}
+                        {{ form.email.label }}
+                        {{ form.email }}
+                        <!--errors-->
+                        {{ render_form_error(form.email) }}
+                        {{ form.name.label }}
+                        {{ form.name }}
+                        <!--errors-->
+                        {{ render_form_error(form.name) }}
+                        {{ form.subject.label }}
+                        {{ form.subject }}
+                        <!--errors-->
+                        {{ render_form_error(form.subject) }}
+                        {{ form.message.label }}
+                        {{ form.message }}
+                        <!--errors-->
+                        {{ render_form_error(form.message) }}
+                        <div>
+                            {{ form.submit }}
+                        </div>
+                    </form>
+                    <!--end render form-->
                 </div>
-            </form>
-            <!--end render form-->
-        </div>
+            {% endif %}
+        {% endwith %}
     </div>
 </div>

@@ -1,4 +1,4 @@
-from flask import render_template, redirect
+from flask import render_template, redirect, flash
 from app.models.works import Work
 from app.models.message import Message
 from app.forms.add_message import AddMessage
@@ -19,7 +19,9 @@ def home():
         message = form.message.data
 
         # add new message
-        Message.add_message(email, name, subject, message)
+        new_message = Message.add_message(email, name, subject, message)
+        if new_message:
+            flash('Message sent I will contact you as soon as possible.')
 
     return render_template('main/index.html', works=works, form=form)
 
