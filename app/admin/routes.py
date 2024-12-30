@@ -1,8 +1,9 @@
 from app.admin import bp
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request
 from app.models.works import Work
 from app.models.message import Message
 from app.models.screenshots import ScreenShot
+from app.extensions import Pagination, get_page_parameter
 # forms
 from app.forms.add_work import AddWork
 from app.forms.add_message import AddMessage
@@ -133,7 +134,9 @@ def delete_work(id_work):
 @bp.route('/messages', methods=['GET'])
 def messages():
     content = Message.get_messages(paginate=True)
-    return render_template('admin/messages/index.html', messages=content)
+    page = request.args.get(get_page_parameter(), type=int, default=1)
+    paginate = Pagination(page=page, total=content.total, search=False, record_name='messages')
+    return render_template('admin/messages/index.html', messages=content, pagination=paginate)
 
 
 @bp.route('/message/<message_id>')
