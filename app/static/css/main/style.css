@@ -314,3 +314,12 @@ nav ul{
 
 
 /* end contact section /footer  */
+
+
+/* errors */
+.error{
+    font-weight: 500;
+    color: red;
+}
+
+/* errors */

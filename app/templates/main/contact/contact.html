@@ -1,3 +1,5 @@
+{% from 'main/_render_error.html' import render_form_error %}' %}
+
 <div class="contact">
     <div class="contact-title">
         <h1>Contact</h1>
@@ -23,12 +25,20 @@
                 {{ form.csrf_token }}
                 {{ form.email.label }}
                 {{ form.email }}
+                <!--errors-->
+                {{ render_form_error(form.email) }}
                 {{ form.name.label }}
                 {{ form.name }}
+                <!--errors-->
+                {{ render_form_error(form.name) }}
                 {{ form.subject.label }}
                 {{ form.subject }}
+                <!--errors-->
+                {{ render_form_error(form.subject) }}
                 {{ form.message.label }}
                 {{ form.message }}
+                <!--errors-->
+                {{ render_form_error(form.message) }}
                 <div>
                     {{ form.submit }}
                 </div>
