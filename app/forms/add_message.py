@@ -9,5 +9,6 @@ class AddMessage(FlaskForm):
                                                                           message="Text must be between 10 and 500 "
                                                                                   "characters")
                                                    ])
+    recaptcha = RecaptchaField()
     submit = SubmitField('Submit')
 
