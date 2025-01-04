@@ -333,6 +333,10 @@ nav ul{
 
 @media screen and (max-width: 780px){
 
+    .hero{
+        padding: 32px 16px 0px 16px;
+    }
+
     /*hero section*/
     .hero-content h2{
         font-size: 3em;
@@ -341,7 +345,7 @@ nav ul{
 
     /* post hero section */
     .post-hero{
-        padding: 0px 32px 32px 32px;
+        padding: 0px 16px 32px 16px;
         gap: 32px;
     }
 
