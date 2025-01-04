@@ -398,6 +398,39 @@ nav ul{
 
     /* end work section */
 
+
+    /* about section */
+
+    .work-section .about{
+        min-height: auto;
+        padding: 20px 16px;
+    }
+
+    .about .about-title h1{
+        font-size: 3.5em;
+    }
+
+    .about .about-title img{
+        width: 64px;
+    }
+
+    .about p{
+        color: white;
+        line-height: 200%;
+        font-size: 24px;
+    }
+
+    .about a:hover{
+       text-decoration: none;
+    }
+
+    .about a{
+        margin: 26px 0;
+    }
+
+
+    /* end about section */
+
     /* contact section */
     .contact-section{
         margin-top: 24px;
