@@ -26,6 +26,12 @@ nav ul{
 
 }
 
+nav ul li{
+    text-transform: capitalize;
+    color: white;
+    font-weight: 600;
+}
+
 .hero .hero-content{
     display: flex;
     flex-direction: column;
@@ -333,11 +339,24 @@ nav ul{
 
 @media screen and (max-width: 780px){
 
+    .hero nav{
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    nav ul{
+        padding: 0;
+        justify-content: space-between;
+    }
+
+
+    /*hero section*/
+
     .hero{
         padding: 32px 16px 0px 16px;
     }
 
-    /*hero section*/
     .hero-content h2{
         font-size: 3em;
     }
