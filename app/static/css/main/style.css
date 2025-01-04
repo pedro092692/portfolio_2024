@@ -189,7 +189,7 @@ nav ul{
 .about p{
     color: white;
     line-height: 250%;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 200;
 }
 
@@ -198,7 +198,7 @@ nav ul{
 }
 
 .about a{
-    margin: 32px 0;
+    margin: 26px 0;
 }
 
 /* end about section */
@@ -329,3 +329,39 @@ nav ul{
 }
 
 /* errors */
+
+/* Media queries */
+
+@media screen and (max-width: 650px){
+
+    /*hero section*/
+    .hero-content h2{
+        font-size: 3em;
+    }
+    /* end hero section*/
+
+    /* post hero section */
+    .post-hero{
+        padding: 0px 32px 32px 32px;
+        gap: 32px;
+    }
+
+
+    .post-hero h2{
+        font-size: 3em;
+    }
+
+    .post-hero .info{
+        color: white;
+        line-height: 200%;
+        font-size: 24px;
+        font-weight: 200;
+    }
+
+    .post-hero button, .about button{
+        width: 100%;
+    }
+    /* end post hero section */
+}
+
+/* lend media queries */

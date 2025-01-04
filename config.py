@@ -9,4 +9,4 @@ class Config:
     RECAPTCHA_USE_SSL = False
     RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY')
     RECAPTCHA_PRIVATE_KEY = os.environ.get('RECAPTCHA_PRIVATE_KEY')
-    RECAPTCHA_OPTIONS = {'theme':'white'}
+    RECAPTCHA_OPTIONS = {'theme': 'white'}
