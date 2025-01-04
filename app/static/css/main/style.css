@@ -100,7 +100,6 @@ nav ul{
 .work-section{
     display: flex;
     flex-direction: column;
-    /*padding: 40px 32px;*/
     gap: 48px;
 }
 
@@ -362,6 +361,42 @@ nav ul{
         width: 100%;
     }
     /* end post hero section */
+
+
+    /* work section */
+    .work-section{
+        gap: 24px;
+    }
+
+    .work-section .title{
+        padding: 20px 16px;
+    }
+
+    .title h1{
+        font-size: 3.5em;
+    }
+
+    .title img{
+        width: 48px;
+    }
+
+    .work-section .work-wrapper{
+        padding: 0px 16px;
+        grid-template-columns: 1fr
+    }
+
+    .work-wrapper .work-card{
+        height: 400px;
+        padding: 24px 16px;
+        border-radius: 24px;
+    }
+
+    .work-wrapper .full{
+        grid-column: span 1;
+    }
+
+
+    /* end work section */
 
     /* contact section */
     .contact-section{
