@@ -10,6 +10,16 @@ def add_item(model, *args):
             setattr(new_item, column.name, args[i - 1])
         i += 1
 
+        if column.name == 'slug':
+            slug = slugify(args[0])
+            unique_slug = slug
+            count = 1
+            while model.check_slug(slug):
+                unique_slug = f'{unique_slug}-{count}'
+                count += 1
+
+            setattr(new_item, column.name, unique_slug)
+
     db.session.add(new_item)
     db.session.commit()
 
