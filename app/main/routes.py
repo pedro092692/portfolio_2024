@@ -26,6 +26,7 @@ def home():
     return render_template('main/index.html', works=works, form=form)
 
 
-@bp.route('/project', methods=['GET'])
-def project():
-    return 'hello world'
+@bp.route('/project/<slug>', methods=['GET'])
+def project(slug):
+    work = Work.check_slug(slug)
+    return render_template('main/project.html', project=work)

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main/style.css') }}">
+{% endblock css %}
+
+{% block title %}
+    Pedro Bastidas dev
+{% endblock title %}
+
+{% block content %}
+    <section class="project">
+        <h1>{{ project.title }}</h1>
+    </section>
+
+
+{% endblock content %}
