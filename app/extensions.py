@@ -11,6 +11,7 @@ from flask_migrate import Migrate
 from datetime import datetime
 from dotenv import load_dotenv
 from flask_paginate import Pagination, get_page_parameter
+from slugify import slugify
 
 # Configure login manager
 login_manager = LoginManager()

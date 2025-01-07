@@ -25,3 +25,7 @@ def home():
 
     return render_template('main/index.html', works=works, form=form)
 
+
+@bp.route('/project', methods=['GET'])
+def project():
+    return 'hello world'

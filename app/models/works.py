@@ -17,6 +17,7 @@ class Work(db.Model):
     full_width: Mapped[bool] = mapped_column(Boolean, default=False, nullable=False)
     position: Mapped[int] = mapped_column(Integer, nullable=True)
     screenshots: Mapped[List["ScreenShot"]] = relationship(back_populates="work",  cascade="all,delete")
+    slug: Mapped[str] = mapped_column(String, unique=True, nullable=True)
 
     @staticmethod
     def add_work(*args):
