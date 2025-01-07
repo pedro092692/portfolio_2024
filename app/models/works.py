@@ -40,3 +40,6 @@ class Work(db.Model):
     def delete_work(work_obj):
         return delete_item(work_obj)
 
+    @staticmethod
+    def check_slug(slug):
+        return Work.query.filter_by(slug=slug).first()
