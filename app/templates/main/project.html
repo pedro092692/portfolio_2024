@@ -2,16 +2,24 @@
 
 {% block css %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main/project.css') }}">
 {% endblock css %}
 
 {% block title %}
-    Pedro Bastidas dev
+    {{ project.title }}
 {% endblock title %}
 
 {% block content %}
-    <section class="project">
-        <h1>{{ project.title }}</h1>
+    <!-- hero section --->
+    <section class="hero">
+        <!-- navbar -->
+        {% include 'main/nav/nav.html' %}
+        <!-- end navbar -->
+        <img class="hero-image" src="{{ project.image_url }}" alt="project image">
+        <div class="overlay"></div>
     </section>
+
+    <!-- end hero section -->
 
 
 {% endblock content %}

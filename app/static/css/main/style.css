@@ -152,11 +152,17 @@ nav ul li{
 
 .work-wrapper .work-card:hover{
     background-color: none;
+    text-decoration: none;
 }
 
 .work-wrapper .full{
     grid-column: span 2;
 }
+
+.work-wrapper a:hover{
+    text-decoration: none;
+}
+
 
 /* end work info */
 
