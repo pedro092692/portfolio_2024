@@ -1,6 +1,7 @@
 <!--first show 3rd works-->
 <div class="work-wrapper">
     {% for work in works[0:3] %}
+        <a href="{{ url_for('main.project', slug=work.slug) }}" class="{{ 'full' if work.full_width }}">
         <div class="work-card  {{ 'full' if work.full_width }}" style="background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
                             url('{{ work.image_url }}'); background-size: cover; background-position: center;">
              <div class="work-info">
@@ -11,6 +12,7 @@
                 <h4>{{ work.work_category }}</h4>
             </div>
         </div>
+        </a>
     {% endfor %}
 </div>
 <!--after 3rd work show about me-->
@@ -20,6 +22,7 @@
 <!--rest of works-->
 <div class="work-wrapper">
     {% for work in works[3::] %}
+    <a href="{{ url_for('main.project', slug=work.slug) }}" class="{{ 'full' if work.full_width }}">
         <div class="work-card  {{ 'full' if work.full_width }}" style="background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
                             url('{{ work.image_url }}'); background-size: cover; background-position: center;">
              <div class="work-info">
@@ -30,6 +33,7 @@
                 <h4>{{ work.work_category }}</h4>
             </div>
         </div>
+        </a>
     {% endfor %}
 </div>
 <!--make a helper for render each work-->
