@@ -16,7 +16,8 @@
             </a>
         </div>
     </div>
-    <div class="contact-form-section">
+    {% if request.endpoint == 'main.home' %}
+        <div class="contact-form-section">
         {% with messages = get_flashed_messages() %}
             {% if not messages %}
                 <h2>let's talk</h2>
@@ -53,4 +54,5 @@
             {% endif %}
         {% endwith %}
     </div>
+    {% endif %}
 </div>
