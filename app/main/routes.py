@@ -1,4 +1,4 @@
-from flask import render_template, redirect, flash
+from flask import render_template, redirect, flash, abort
 from app.models.works import Work
 from app.models.message import Message
 from app.forms.add_message import AddMessage
@@ -29,4 +29,7 @@ def home():
 @bp.route('/project/<slug>', methods=['GET'])
 def project(slug):
     work = Work.check_slug(slug)
+    if not work:
+        return abort(404)
+
     return render_template('main/project.html', project=work)
