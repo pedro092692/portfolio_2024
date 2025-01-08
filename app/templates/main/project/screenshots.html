@@ -1,8 +1,10 @@
 <div class="screenshot-content">
-    <h2>Screenshots</h2>
-
-    {% for screenshot in project.screenshots %}
-        <img src="{{ screenshot.img_url }}" alt="project screenshot" width="512">
-    {% endfor %}
-
+    <h2>Screenshots:</h2>
+    <div class="gallery">
+        {% for screenshot in project.screenshots %}
+            <div>
+                <img src="{{ screenshot.img_url }}" alt="project screenshot">
+            </div>
+        {% endfor %}
+    </div>
 </div>

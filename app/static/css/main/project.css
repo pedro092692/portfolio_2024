@@ -102,6 +102,9 @@
     align-items: center;
 }
 
+/* end project info section */
+
+/* screenshots section */
 .screenshots{
     display: flex;
     flex-direction: column;
@@ -109,4 +112,28 @@
     gap: 16px;
 }
 
-/* end project info section */
+.screenshots .screenshot-content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.screenshots .screenshot-content h2{
+    font-size: 80px;
+    color: black;
+}
+
+.screenshot-content .gallery{
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.gallery img{
+    width: auto;
+    height: auto;
+}
+
+/* end screenshots section */
