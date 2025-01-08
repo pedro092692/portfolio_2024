@@ -102,5 +102,11 @@
     align-items: center;
 }
 
+.screenshots{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 32px;
+    gap: 16px;
+}
 
 /* end project info section */
