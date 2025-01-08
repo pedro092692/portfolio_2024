@@ -26,6 +26,10 @@ nav ul{
 
 }
 
+nav ul a:hover{
+    text-decoration: none;
+}
+
 nav ul li{
     text-transform: capitalize;
     color: white;
