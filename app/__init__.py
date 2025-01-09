@@ -44,6 +44,10 @@ def create_app(config_class=Config):
     def custom_404(error):
         return render_template('main/404.html')
 
+    @app.errorhandler(400)
+    def custom_400(error):
+        return render_template('main/400.html')
+
     return app
 
 
