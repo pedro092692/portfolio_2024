@@ -1,10 +1,14 @@
 <div class="screenshot-content">
     <h2>Screenshots:</h2>
     <div class="gallery">
-        {% for screenshot in project.screenshots %}
-            <div>
-                <img src="{{ screenshot.img_url }}" alt="project screenshot">
-            </div>
-        {% endfor %}
+        {% if project.screenshots %}
+            {% for screenshot in project.screenshots %}
+                <div>
+                    <img src="{{ screenshot.img_url }}" alt="project screenshot">
+                </div>
+            {% endfor %}
+        {% else %}
+            <h3>This projects has no screenshots.</h3>
+        {% endif %}
     </div>
 </div>
