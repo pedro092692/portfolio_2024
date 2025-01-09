@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main/style.css') }}">
+{% endblock css %}
+
+{% block title %}
+    Pedro Bastidas dev
+{% endblock title %}
+
+{% block content %}
+    <!--hero section-->
+    <section class="hero">
+        <!--nav-->
+        {% include 'main/nav/nav.html' %}
+        <!--end nav-->
+
+        <div class="hero-content">
+            <h2>
+                404 not found.
+            </h2>
+        </div>
+    </section>
+    <!--end hero-->
+{% endblock content %}

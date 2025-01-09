@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from config import Config
 from app.extensions import Bootstrap4
 from app.extensions import db
@@ -40,9 +40,9 @@ def create_app(config_class=Config):
     app.register_blueprint(security_bp)
     app.register_blueprint(admin_bp, url_prefix='/admin')
 
-    @app.route('/test')
-    def test_route():
-        return 'this is a test rute.'
+    @app.errorhandler(404)
+    def custom_404(error):
+        return render_template('main/404.html')
 
     return app
 
