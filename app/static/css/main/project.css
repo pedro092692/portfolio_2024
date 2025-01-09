@@ -137,3 +137,30 @@
 }
 
 /* end screenshots section */
+
+/* mobile styles */
+
+@media screen and (max-width: 780px){
+    .project-info .project-details a h1{
+        font-size: 3em;
+    }
+
+    .project-summary h2{
+        font-size: 3em;
+    }
+
+    .project-summary .details h2{
+        font-size: 2em;
+    }
+
+
+    .screenshots .screenshot-content h2{
+        font-size: 2.5em;
+    }
+
+    .screenshots .screenshot-content .gallery div img{
+        max-width: 300px;
+    }
+}
+
+/* end mobile styles */
