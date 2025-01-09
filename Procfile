@@ -1,1 +1,1 @@
-gunicorn "app:create_app('production')"
+web:gunicorn "app:create_app('production')"
