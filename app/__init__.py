@@ -48,9 +48,9 @@ def create_app(config_class=Config):
     def custom_400(error):
         return render_template('main/400.html')
 
-    if __name__ == "__main__":
-        app.run()
+    return app
 
 
-create_app()
+app = create_app()
+
 
