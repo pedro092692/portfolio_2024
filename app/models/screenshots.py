@@ -7,7 +7,7 @@ class ScreenShot(db.Model):
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
     work_id: Mapped[int] = mapped_column(Integer, ForeignKey("works.id", ondelete="CASCADE"))
-    img_url: Mapped[str] = mapped_column(String(300), nullable=False)
+    img_url: Mapped[str] = mapped_column(String(2000), nullable=False)
     work: Mapped["Work"] = relationship(back_populates="screenshots")
 
     @staticmethod
