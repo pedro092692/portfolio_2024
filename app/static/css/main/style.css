@@ -108,6 +108,11 @@ nav ul li{
     justify-content: center;
 }
 
+.post-hero a:hover{
+    text-decoration: none;
+}
+
+
 /* end post hero section*/
 
 /* work section */
