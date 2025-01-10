@@ -6,7 +6,7 @@ def add_item(model, *args):
     i = 0
 
     for column in new_item.__table__.columns:
-        if column.name != 'id':
+        if column.name != 'id' and column.name != 'slug':
             setattr(new_item, column.name, args[i - 1])
         i += 1
 
