@@ -9,7 +9,7 @@ class Work(db.Model):
     title: Mapped[str] = mapped_column(String(150), nullable=False)
     subtitle: Mapped[str] = mapped_column(String(150), nullable=False)
     technology: Mapped[str] = mapped_column(String(150), nullable=False)
-    image_url: Mapped[str] = mapped_column(String(2000), nullable=False)
+    image_url: Mapped[str] = mapped_column(String, nullable=False)
     summary: Mapped[str] = mapped_column(String(500), nullable=False)
     url: Mapped[str] = mapped_column(String, nullable=True)
     repository_url: Mapped[str] = mapped_column(String, nullable=False)
