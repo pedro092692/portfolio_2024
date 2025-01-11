@@ -141,8 +141,12 @@
 /* mobile styles */
 
 @media screen and (max-width: 780px){
-    .project-info .project-details a h1{
-        font-size: 3em;
+    .project-info .project-details h1{
+        font-size: 2.7em;
+    }
+
+    .project-details h3{
+        font-size: 1.7em;
     }
 
     .project-summary h2{
