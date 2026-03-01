@@ -3,7 +3,7 @@
     {% for work in works[0:3] %}
         <a href="{{ url_for('main.project', slug=work.slug) }}" class="{{ 'full' if work.full_width }}">
         <div class="work-card  {{ 'full' if work.full_width }}">
-            <img src="{{ work.image_url }}" alt="project image">
+            <img loading="lazy" src="{{ work.image_url }}" alt="project image">
             <div class="content" onmouseover="bg(this)" onmouseleave="end_bg(this)">
                  <div class="work-info">
                     <h2>{{ work.title }}</h2>
@@ -27,7 +27,7 @@
     {% for work in works[3::] %}
     <a href="{{ url_for('main.project', slug=work.slug) }}" class="{{ 'full' if work.full_width }}">
         <div class="work-card  {{ 'full' if work.full_width }}">
-             <img src="{{ work.image_url }}" alt="project image">
+             <img loading="lazy" src="{{ work.image_url }}" alt="project image">
             <div class="content" onmouseover="bg(this)" onmouseleave="end_bg(this)">
                  <div class="work-info">
                     <h2>{{ work.title }}</h2>

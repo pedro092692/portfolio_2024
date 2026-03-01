@@ -13,7 +13,7 @@ body{
     flex-direction: column;
     height: 100vh;
     padding: 32px 32px 0px 32px;
-    background-image: url('/static/img/background.jpg');
+    background-image: url('/static/img/background.webp');
     background-position: center;
     background-size: cover;
 }

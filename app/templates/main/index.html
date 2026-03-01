@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block css %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main/style.css') }}" media="all">
 {% endblock css %}
 
 {% block title %}
@@ -42,7 +42,7 @@
 
 <!--    custom js-->
 {% block js %}
-    <script src="{{ url_for('static', filename='js/project.js') }}">
+    <script type="module" src="{{ url_for('static', filename='js/project.js') }}">
     </script>
 {% endblock js %}
 <!--end custom js-->

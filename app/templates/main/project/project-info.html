@@ -24,11 +24,11 @@
     <div class="project-links">
         {% if project.url %}
             <a href="{{ project.url }}" target="_blank">
-                <img src="{{ url_for('static', filename='img/globe.svg') }}" alt="globe img" width="64">
+                <img loading="lazy" src="{{ url_for('static', filename='img/globe.svg') }}" alt="globe img" width="64">
             </a>
         {% endif %}
         <a href="{{ project.repository_url }}" target="_blank">
-            <img src="{{ url_for('static', filename='img/github.svg') }}" alt="github icon" width="64">
+            <img loading="lazy" src="{{ url_for('static', filename='img/github.svg') }}" alt="github icon" width="64">
         </a>
     </div>
 </div>

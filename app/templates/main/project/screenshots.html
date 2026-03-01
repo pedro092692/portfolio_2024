@@ -2,9 +2,9 @@
     <h2>Screenshots:</h2>
     <div class="gallery">
         {% if project.screenshots %}
-            {% for screenshot in project.screenshots %}
+            {% for screenshot in project. screenshots %}
                 <div>
-                    <img src="{{ screenshot.img_url }}" alt="project screenshot">
+                    <img loading="lazy" src="{{ screenshot.img_url }}" alt="project screenshot">
                 </div>
             {% endfor %}
         {% else %}

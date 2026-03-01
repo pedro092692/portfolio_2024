@@ -2,7 +2,7 @@
 
 <!--custom css-->
 {% block css %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/admin/style.css') }}" media="all">
 {% endblock css %}
 <!--end custom css-->
 
@@ -80,6 +80,6 @@
 
 <!--custom js-->
     {% block js %}
-        <script src="{{ url_for('static', filename='js/change_bg_admin.js') }}"> </script>
+        <script type="module" src="{{ url_for('static', filename='js/change_bg_admin.js') }}"> </script>
     {% endblock js %}
 <!--end custom js-->
